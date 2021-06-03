@@ -6,7 +6,8 @@
 	"scripts": {
 		"start": "node server.js",
 		"server": "nodemon server.js",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"client": "npm start --prefix client",
+		"dev": "concurrently \"npm run server\" \"npm run client\""
 	},
 	"repository": {
 		"type": "git",
@@ -20,6 +21,7 @@
 	"homepage": "https://github.com/mi4en/spacex-missions-stats#readme",
 	"dependencies": {
 		"axios": "^0.21.1",
+		"concurrently": "^6.2.0",
 		"dotenv": "^10.0.0",
 		"express": "^4.17.1",
 		"express-graphql": "^0.12.0",
