@@ -1,6 +1,10 @@
 const express = require('express')
-const graphqlHTTP = require('express-graphql')
+const { graphqlHTTP } = require('express-graphql')
 const schema = require('./schema')
+
+if (process.env.NODE_ENV !== 'production') {
+	require('dotenv').config()
+}
 
 const app = express()
 
@@ -8,7 +12,7 @@ app.use(
 	'/graphql',
 	graphqlHTTP({
 		schema,
-		graphql: true,
+		graphiql: true,
 	}),
 )
 
