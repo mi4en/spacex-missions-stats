@@ -4,6 +4,7 @@ import './App.css'
 import logo from './logo.png'
 import Launches from './components/Launches'
 import LaunchDetails from './components/LaunchDetails'
+import Footer from './components/Footer'
 
 function App() {
 	return (
@@ -17,6 +18,7 @@ function App() {
 				<Route exact path='/' component={Launches} />
 				<Route exact path='/launch/:flight_number' component={LaunchDetails} />
 			</div>
+			<Footer />
 		</Router>
 	)
 }
