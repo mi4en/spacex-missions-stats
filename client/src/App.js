@@ -1,14 +1,16 @@
 import './App.css'
 import logo from './logo.png'
+import Launches from './components/Launches'
 
 function App() {
 	return (
-		<div className='App'>
+		<div className='container'>
 			<img
 				src={logo}
 				alt='SpaceX'
 				style={{ width: 300, display: 'block', margin: 'auto' }}
 			/>
+			<Launches />
 		</div>
 	)
 }

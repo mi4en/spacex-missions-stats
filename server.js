@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const { graphqlHTTP } = require('express-graphql')
 const schema = require('./schema')
 
@@ -7,6 +8,9 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const app = express()
+
+// Allow CORS
+app.use(cors())
 
 app.use(
 	'/graphql',
