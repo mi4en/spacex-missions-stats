@@ -19,7 +19,7 @@ const Footer = () => {
 							GraphQL
 						</a>
 						<a href='https://apollographql.com' className='mr-2'>
-							GraphQL
+							Apollo
 						</a>
 					</div>
 
