@@ -1,5 +1,8 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { gql, useQuery } from '@apollo/client'
+
+import LaunchItem from './LaunchItem'
+import MissionKey from './MissionKey'
 
 const LAUNCHES_QUERY = gql`
 	query LaunchesQuery {
@@ -19,20 +22,19 @@ const Launches = () => {
 	if (error) return <p>Error: {error}</p>
 	console.log('data: ', data)
 
+	// In the SpaceX API there are two launches with the same flight number - elements 110 and 111, that is why here we remove the last element of the arr, so we dont get React errors for same key in the map func
+	const launches = data.launches.slice(0, 110)
+
 	return (
-		<div>
+		<Fragment>
 			<h1 className='display-4 my-3'>Launches</h1>
-			<div>
-				{data.launches.map(launch => (
-					<div>
-						<p>{launch.flight_number}</p>
-						<p>{launch.mission_name}</p>
-						<p>{launch.launch_date_local}</p>
-						<p>{launch.launch_success}</p>
-					</div>
+			<MissionKey />
+			<Fragment>
+				{launches.map(launch => (
+					<LaunchItem key={launch.flight_number} launch={launch} />
 				))}
-			</div>
-		</div>
+			</Fragment>
+		</Fragment>
 	)
 }
 
