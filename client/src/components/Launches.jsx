@@ -20,7 +20,6 @@ const Launches = () => {
 
 	if (loading) return <p>Loading...</p>
 	if (error) return <p>Error: {error}</p>
-	console.log('data: ', data)
 
 	// In the SpaceX API there are two launches with the same flight number - elements 110 and 111, that is why here we remove the last element of the arr, so we dont get React errors for same key in the map func
 	const launches = data.launches.slice(0, 110)

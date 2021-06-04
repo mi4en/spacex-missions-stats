@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Moment from 'react-moment'
+import { Link } from 'react-router-dom'
 
 const LaunchItem = ({
 	launch: { flight_number, mission_name, launch_date_local, launch_success },
@@ -20,12 +21,11 @@ const LaunchItem = ({
 					</p>
 				</div>
 				<div className='col-md-3'>
-					<button className='btn btn-secondary'>Launch Details</button>
+					<Link to={`/launch/${flight_number}`} className='btn btn-secondary'>
+						Launch Details
+					</Link>
 				</div>
 			</div>
-			{/* <p>{flight_number}</p>
-			<p>{launch_date_local}</p>
-			<p>{launch_success ? 'success' : 'failed'}</p> */}
 		</div>
 	)
 }
