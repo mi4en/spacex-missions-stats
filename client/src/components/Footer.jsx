@@ -9,11 +9,11 @@ const Footer = () => {
 						<a href='https://mario-nikolov.com'>Mario Nikolov</a>
 						<span>&copy; {new Date().getFullYear()}. App built with </span>
 
-						<a href='https://reactjs.org' className='mr-2'>
-							React
-						</a>
 						<a href='https://expressjs.com' className='mr-2'>
 							Node-Express
+						</a>
+						<a href='https://reactjs.org' className='mr-2'>
+							React
 						</a>
 						<a href='https://graphql.org' className='mr-2'>
 							GraphQL
