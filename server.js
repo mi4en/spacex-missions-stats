@@ -13,8 +13,6 @@ const app = express()
 // Allow CORS
 app.use(cors())
 
-app.use(express.static(path.join(__dirname, 'client/build')))
-
 app.use(
 	'/graphql',
 	graphqlHTTP({
@@ -23,8 +21,10 @@ app.use(
 	}),
 )
 
+app.use(express.static('public'))
+
 app.get('*', (req, res) => {
-	res.sendFile(path.join(__dirname + '/client/build/index.html'))
+	res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
 })
 
 const PORT = process.env.PORT
