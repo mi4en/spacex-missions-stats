@@ -26,7 +26,7 @@ const Launches = () => {
 
 	return (
 		<Fragment>
-			<h1 className='display-4 my-3'>Missions</h1>
+			<h1 className='display-4 my-3'>Launches</h1>
 			<MissionKey />
 			<Fragment>
 				{launches.map(launch => (
